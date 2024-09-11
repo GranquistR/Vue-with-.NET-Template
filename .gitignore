@@ -397,6 +397,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Ignore the .env file containing docker passwords
-.env
+# Ignore the .env file containing docker passwordss
 /.env

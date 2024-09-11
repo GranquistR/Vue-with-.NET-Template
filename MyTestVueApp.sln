@@ -10,9 +10,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E85D9BE-1311-4CBB-B7AA-C5AAF6850E7D}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		docker-compose.yml = docker-compose.yml
-		.env = .env
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{8DA0FA32-2E15-4A3D-BAD8-2922B1BB3764}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		entrypoint.sh = entrypoint.sh
+		init.sql = init.sql
 	EndProjectSection
 EndProject
 Global
@@ -34,6 +39,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8DA0FA32-2E15-4A3D-BAD8-2922B1BB3764} = {1E85D9BE-1311-4CBB-B7AA-C5AAF6850E7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29429549-A7C9-4E75-92D3-503705884558}

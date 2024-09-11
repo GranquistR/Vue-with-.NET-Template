@@ -1,3 +1,9 @@
+using Microsoft.Extensions.Configuration;
+using MyTestVueApp.Server.Configuration;
+using MyTestVueApp.Server.Interfaces;
+using MyTestVueApp.Server.ServiceImplementations;
+using System.Runtime;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +12,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.Configure<ApplicationConfiguration>(builder.Configuration.GetSection("ApplicationConfiguration"));
+
+//Custom Services
+builder.Services.AddTransient<IWeatherForecastService, WeatherForecastService>();
 
 var app = builder.Build();
 
