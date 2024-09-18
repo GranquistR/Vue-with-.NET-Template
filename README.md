@@ -22,12 +22,6 @@ vscode-icons
 
 ## Setup for local development
 
-1. Clone the Repository
-1. Create a .env file in the root directory of the project and add the following environment variables:
-	```
-	SA_PASSWORD=PASSWORD_HERE
-	```
-
 ### Frontend setup
 
 1. Open the .Client project folder in VS Code
