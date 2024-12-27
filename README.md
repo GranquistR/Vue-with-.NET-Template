@@ -1,5 +1,7 @@
 # MyTestVueApp
+
 Template by Ryan Granquist
+
 ## Required IDE Setup
 
 [Node.JS](https://nodejs.org/en)
