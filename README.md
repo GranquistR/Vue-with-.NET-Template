@@ -55,3 +55,19 @@ vscode-icons
 1. Open the .sln file in the root directory of the project in Visual Studio
 1. Run the project with the Start button in Visual Studio
 1. Accept all certificates when prompted
+
+## Adding a new service/controller
+
+### Adding a new service
+1. Create the service interface with the desired methods in the ```Interfaces``` folder
+1. Create the service implmentation in the ```ServiceImplementation``` folder
+1. Setup the dependency injection in the ```Program.cs``` file following the existing example
+
+### Adding a new controller
+When adding a new controller, follow these steps:
+1. Create a file in the Controllers folder ending with ```Controller.cs```
+1. Be sure to have the class inherit from ```ControllerBase```
+1. Include the ```[ApiController]``` and ```[Route("[controller]")]``` attributes above the class name
+1. IMPORTANT: Add your controller name to the ```vite.config.ts``` file in the client folder under the ```server.proxy``` section
+	1. Failure to do so will result in all fetch request failing to the requested controller 
+	
