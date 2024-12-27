@@ -44,7 +44,7 @@ vscode-icons
 	```
 	Server: localhost,1433
 	Login: sa
-	Password: PASSWORD_HERE
+	Password: LocalPassword123
 	Encryption: Optional
 	Trust Server Certificate: Yes
 	```
