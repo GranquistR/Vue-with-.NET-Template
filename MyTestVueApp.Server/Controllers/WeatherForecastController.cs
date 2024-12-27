@@ -20,7 +20,8 @@ namespace MyTestVueApp.Server.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-           return WeatherForecastService.GetWeatherForecast();
+            Logger.LogInformation("Getting weather forecast.");
+            return WeatherForecastService.GetWeatherForecast();
         }
     }
 }
