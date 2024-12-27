@@ -1,18 +1,23 @@
 -- init.sql
 -- This script runs on database startup
+-- Use it to define your database schema
+-- run 'docker-compose down' followed by 'docker-compose up' to re-create the database anytime you make changes
+-- IMPORTANT: this script will fail if line endings are not LF (Unix-style)
+-- In visual studio code, you can change the line endings by clicking on the CRLF in the bottom right corner and selecting LF
 
--- Check if the database exists, and create it if it does not
+-- Create the Weather database
 IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'Weather')
 BEGIN
     CREATE DATABASE Weather;
 END
 GO
 
--- Use the database
+-- Use the Weather database
 USE Weather;
+
 GO
 
--- Check if the Forecasts table exists, and create it if it does not
+-- Create the WeatherForecasts table
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'WeatherForecasts')
 BEGIN
     CREATE TABLE WeatherForecasts (
@@ -24,7 +29,7 @@ BEGIN
 END
 GO
 
---Check if the Forecasts table is empty, else prefill with some data
+-- Insert some sample data into the WeatherForecasts table
 IF NOT EXISTS (SELECT * FROM WeatherForecasts)
 BEGIN
 	INSERT INTO WeatherForecasts (Date, TemperatureC, Summary) VALUES
