@@ -12,6 +12,8 @@
 
 [Docker Desktop](https://www.docker.com/get-started/)
 
+[Microsoft SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+
 ## Essential VS Code Extensions
 
 Prettier - Code formatter <- *Set as default formatter*
@@ -52,7 +54,4 @@ vscode-icons
 
 1. Open the .sln file in the root directory of the project in Visual Studio
 1. Run the project with the Start button in Visual Studio
-
-## Testing the application
-
-WIP
+1. Accept all certificates when prompted
