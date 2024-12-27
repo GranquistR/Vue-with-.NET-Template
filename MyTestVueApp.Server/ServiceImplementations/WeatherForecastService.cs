@@ -13,7 +13,7 @@ namespace MyTestVueApp.Server.ServiceImplementations
         {
             AppConfig = appConfig;
         }
-        public IEnumerable<WeatherForecast> GetWeatherForecast()
+        public IEnumerable<WeatherForecast> GetAllForecasts()
         {
             var forecasts = new List<WeatherForecast>();
             var connectionString = AppConfig.Value.ConnectionString;

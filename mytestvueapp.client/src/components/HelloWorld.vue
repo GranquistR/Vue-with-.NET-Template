@@ -13,8 +13,8 @@
         for more details.
       </div>
 
-      <div v-if="post" class="content">
-        <DataTable :value="post" tableStyle="min-width: 50rem">
+      <div v-if="forecasts" class="content">
+        <DataTable :value="forecasts" tableStyle="min-width: 50rem">
           <Column field="date" header="Date">
             <template #body="slotProps">
               {{ slotProps.data.date }}
@@ -37,40 +37,20 @@ import { onMounted, ref } from "vue";
 import ThemeSwitcher from "./ThemeSwitcher.vue";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
+import WeatherForecastService from "@/services/WeatherForecastService";
+import type Forecast from "@/entitites/Forecast";
 
-type Forecasts = {
-  date: string;
-  temperatureC: string;
-  temperatureF: string;
-  summary: string;
-}[];
-
-const color = ref<string>("1976D2");
 const loading = ref(true);
-const post = ref<Forecasts | null>(null);
+const forecasts = ref<Forecast[]>([]);
 
 onMounted(() => {
   // fetch the data when the view is created and the data is
   // already being observed
-  fetchData();
+  WeatherForecastService.GetWeatherForecast().then((data) => {
+    forecasts.value = data;
+    loading.value = false;
+  });
 });
-
-function fetchData() {
-  post.value = null;
-  loading.value = true;
-
-  fetch("weatherforecast")
-    .then((r) => r.json())
-    .then((json) => {
-      post.value = json as Forecasts;
-      loading.value = false;
-      return;
-    })
-    .catch(() => {
-      console.log("Error fetching data");
-      loading.value = false;
-    });
-}
 </script>
 
 <style scoped></style>

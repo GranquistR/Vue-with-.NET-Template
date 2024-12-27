@@ -11,6 +11,6 @@ namespace MyTestVueApp.Server.Interfaces
         /// Get the weather forecast.
         /// </summary>
         /// <returns>The weather forecast.</returns>
-        public IEnumerable<WeatherForecast> GetWeatherForecast();
+        public IEnumerable<WeatherForecast> GetAllForecasts();
     }
 }

@@ -17,11 +17,12 @@ namespace MyTestVueApp.Server.Controllers
             WeatherForecastService = weatherForecastService;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        [Route("GetAllForecasts")]
+        public IEnumerable<WeatherForecast> GetAllForecasts()
         {
             Logger.LogInformation("Getting weather forecast.");
-            return WeatherForecastService.GetWeatherForecast();
+            return WeatherForecastService.GetAllForecasts();
         }
     }
 }
