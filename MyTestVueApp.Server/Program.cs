@@ -1,8 +1,6 @@
-using Microsoft.Extensions.Configuration;
 using MyTestVueApp.Server.Configuration;
 using MyTestVueApp.Server.Interfaces;
 using MyTestVueApp.Server.ServiceImplementations;
-using System.Runtime;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +11,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+//Injects ApplicationConfiguration
 builder.Services.Configure<ApplicationConfiguration>(builder.Configuration.GetSection("ApplicationConfiguration"));
 
-//Custom Services
+//Injects custom Services
 builder.Services.AddTransient<IWeatherForecastService, WeatherForecastService>();
 
 var app = builder.Build();
